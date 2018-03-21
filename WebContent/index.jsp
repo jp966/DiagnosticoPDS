@@ -9,7 +9,7 @@
 <script src="resources/js/jquery-3.3.1.min.js"></script>
 <script src="resources/js/ingresoSistema.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Sistema de registro</title>
 </head>
 <body>
 

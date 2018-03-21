@@ -15,8 +15,9 @@
 <script src="resources/js/bootstrap.min.js"></script>
 <script src="resources/js/bootstrap.js"></script>
 <script src="resources/js/jquery-3.3.1.min.js"></script>
+<script src="resources/js/listaContacto.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Sistema de registro</title>
 </head>
 <body>
 
@@ -38,45 +39,12 @@
       </tr>
     </thead>
     <tbody id="body-tabla">
-    <% 
-    Contacto[] arrayContactos = ContactoDAO.listContactoByQuery(null,null);
-    //Contacto[] contactos = (Contacto[])request.getSession().getAttribute("contactos");
-    //out.print(contactos.get(0).getNombre());
-    for(Contacto contacto : arrayContactos)
-    {
-       out.print("<tr>");
-       
-	       out.print("<td>");
-	       	out.print(contacto.getNombre());
-	       out.print("</td>");
-	       
-	       out.print("<td>");
-	       	out.print(contacto.getApellido());
-	       out.print("</td>");
-       
-	       out.print("<td>");
-	       	out.print(contacto.getRun());
-	       out.print("</td>");
-	       
-	       out.print("<td>");
-	       	out.print(contacto.getTelefono());
-	       out.print("</td>");
-	       
-	       out.print("<td>");
-	       	out.print(contacto.getMail());
-	       out.print("</td>");
+   		<div id="contenedor-cargando" style="display:none;">
+   			<center>
+   			<img src="resources/gif/ajax-loader.gif" width="100" height="100">
+   			</center>
+   		</div>
 
-	       %>
-	       <td>
-	       <button type="button" class="btn" style="background-color: #ff8533"><i class="far fa-address-book" style="color:white;"></i></button>
-	       <button type="button" class="btn" style="background-color:#009999;"><i class="far fa-edit" style="color:white;"></i></button>
-	       <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-	       </td>
-	       <%
-	       
-       out.print("</tr>");
-    }
-%>
       
     </tbody>
   </table>

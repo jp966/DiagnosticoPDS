@@ -48,29 +48,40 @@ public class ListaContacto extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		response.setContentType("text/plain");
+
+		PrintWriter out = response.getWriter();
+		
 		try {
 			Contacto[] arrayContactos = ContactoDAO.listContactoByQuery(null,null);
-			//Usuario[] usuarios = UsuarioDAO.listUsuarioByQuery(null,null);
 			
-			List<Contacto> contactos = new ArrayList<Contacto>();
-			
-			for(int i=0;i<arrayContactos.length;i++) {
-				contactos.add(arrayContactos[i]);
+
+			for (int i = 0; i < arrayContactos.length; i++) {
+				out.println("<tr>");
+				
+					out.println("<td>" + arrayContactos[i].getNombre() + "</td>");
+					out.println("<td>" + arrayContactos[i].getApellido() + "</td>");
+					out.println("<td>" + arrayContactos[i].getRun() + "</td>");
+					out.println("<td>" + arrayContactos[i].getTelefono() + "</td>");
+					out.println("<td>" + arrayContactos[i].getMail() + "</td>");
+					
+					out.println("<td>");
+						out.println("<button type=\"button\" class=\"btn\" style=\"background-color: #ff8533\"><i class=\"far fa-address-book\" style=\"color:white;\"></i></button>");
+						out.println("<button type=\"button\" class=\"btn\" style=\"background-color:#009999;\"><i class=\"far fa-edit\" style=\"color:white;\"></i></button>");
+						out.println("<button type=\"button\" class=\"btn btn-danger\"><i class=\"far fa-trash-alt\"></i></button>");
+					out.println("</td>");
+						
+				out.println("</tr>");
 			}
-			
-			String saludo = "hola";
-			 //String json = new Gson().toJson(arrayContactos);
-			 //System.out.println(json);
 		
-			request.getSession().setAttribute("contactos", arrayContactos);
-			request.getRequestDispatcher("contactos.jsp").forward(request, response);
+		
+		
+			//request.getSession().setAttribute("contactos", arrayContactos);
+			//request.getRequestDispatcher("contactos.jsp").forward(request, response);
 			
 			
-			//response.setContentType("application/json");
-			//response.setCharacterEncoding("UTF-8");
-			//response.getWriter().write(json);
-			//response.getWriter().close();
-			
+		
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
