@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: 
+License Type: Evaluation
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="sistema.Contacto" table="contacto" lazy="false">
+		<id name="id" column="id" type="integer" unsaved-value="0">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="nombre" column="nombre" type="string" length="255" not-null="true" lazy="false"/>
+		<property name="apellido" column="apellido" type="string" length="255" not-null="true" lazy="false"/>
+		<property name="run" column="run" unique="true" type="string" length="12" not-null="true" lazy="false"/>
+		<property name="mail" column="mail" type="string" length="255" not-null="true" lazy="false"/>
+		<property name="direccion" column="direccion" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="telefono" column="telefono" type="string" length="20" not-null="false" lazy="false"/>
+		<property name="fechaNacimiento" column="fechaNacimiento" type="date" not-null="false" lazy="false"/>
+		<property name="lugarResidencia" column="lugarResidencia" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="organizacion" column="organizacion" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="foto" column="foto" type="string" length="255" not-null="false" lazy="false"/>
+		<set name="ORM_Anotacion" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="contactoid" not-null="true"/>
+			<one-to-many class="sistema.Anotacion"/>
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: 
+License Type: Evaluation
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="sistema.Anotacion" table="anotacion" lazy="false">
+		<id name="id" column="id" type="integer" unsaved-value="0">
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="titulo" column="titulo" type="string" length="255" not-null="true" lazy="false"/>
+		<property name="contenido" column="contenido" type="string" length="255" not-null="true" lazy="false"/>
+		<property name="fecha" column="fecha" type="date" not-null="true" lazy="false"/>
+		<many-to-one name="contacto" cascade="lock" column="contactoid" class="sistema.Contacto" not-null="true" lazy="proxy" access="field">
+		</many-to-one>
+	</class>
+</hibernate-mapping>
