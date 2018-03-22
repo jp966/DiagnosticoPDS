@@ -85,7 +85,7 @@
   <div class="form-row">
 	  <div class="form-group col-md-12">
 	      <label for="fotoContacto">Foto</label>
-	     <input type="text" class="form-control" id="fotoContacto" placeholder="Foto contacto" required>
+	     <input type="text" class="form-control" id="fotoContacto" placeholder="Foto contacto (enlace)" required>
 	      
 	    </div>
   </div>

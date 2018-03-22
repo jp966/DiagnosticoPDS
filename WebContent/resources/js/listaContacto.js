@@ -24,10 +24,40 @@ $(document).ready(function(){
 
 
 	});
+	
+	//Botón ver detalle contacto
+	$("body").on("click","#verDetalle",function(){
+		idContacto = $(this).closest('td').siblings().find('#idContacto').html();
+		
+		$.ajax({
+			type:"POST",
+			url:"DetalleContacto",
+			data: {idContacto:idContacto},
+			beforeSend: function(){
+				$("#cardDetalleContacto").empty();
+				$("#contenedor-cargando").show();
+			},
+			success: function(respuesta){
+				$(respuesta).appendTo("#cardDetalleContacto");
+				
+			},
+			error: function(xhr, status, error) {
+				  var err = eval("(" + xhr.responseText + ")");
+				  alert(err.Message);
+			},
+			complete: function(){
+				$("#contenedor-cargando").hide();
+			}
+
+		});
+		
+	});
+	
+	
+	
+	
 	//Botón eliminar del modal de confirmación
 	$("#formEliminarContacto").submit(function(){
-		
-		
 		$.ajax({
 			type:"POST",
 			url:"EliminaContacto",

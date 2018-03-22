@@ -67,6 +67,7 @@ public class ListaContacto extends HttpServlet {
 					out.println("<td>" + arrayContactos[i].getTelefono() + "</td>");
 					out.println("<td>" + arrayContactos[i].getMail() + "</td>");
 					out.println("<td>");
+						out.println("<button id='verDetalle' title='Ver detalle' data-toggle=\"modal\" data-target=\"#modalDetalleContacto\" type=\"button\" class=\"btn\" style=\"background-color:#00cc44;\"><i class=\"fas fa-eye\" style='color:white;'></i></button>");
 						out.println("<button title='Bitácora' type=\"button\" class=\"btn\" style=\"background-color: #ff8533\"><i class=\"far fa-address-book\" style=\"color:white;\"></i></button>");
 						out.println("<button title='Editar' type=\"button\" class=\"btn\" style=\"background-color:#009999;\"><i class=\"far fa-edit\" style=\"color:white;\"></i></button>");
 						out.println("<button id='eliminar' title='Eliminar' data-toggle=\"modal\" data-target=\"#modalEliminarContacto\" type=\"button\" class=\"btn btn-danger\"><i class=\"far fa-trash-alt\"></i></button>");
