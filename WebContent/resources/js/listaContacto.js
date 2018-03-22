@@ -24,13 +24,14 @@ $(document).ready(function(){
 
 
 	});
-
-	$("#boton-eliminar").click(function(){
-		alert(idContacto)
+	//Botón eliminar del modal de confirmación
+	$("#formEliminarContacto").submit(function(){
+		
+		
 		$.ajax({
 			type:"POST",
 			url:"EliminaContacto",
-			data: {id:idContacto},
+			data: {idContacto:idContacto},
 			beforeSend: function(){
 				$("#contenedor-cargando").show();
 			},
@@ -47,20 +48,12 @@ $(document).ready(function(){
 			}
 
 		});
+		
 	});
-	
-	$("#eliminarTest").click(function(){
-		alert("hola");
-		alert($(this).name);
-		//idContacto = $('#eliminar').closest('td').siblings().find('#idContacto').html();
-		//alert(idContacto);
+	//Botón eliminar de la tabla
+	$("body").on("click", "#eliminar", function(){
+		idContacto = $(this).closest('td').siblings().find('#idContacto').html();
 	});
-	
-	
-	
-		
-		
-		
 		
 
 

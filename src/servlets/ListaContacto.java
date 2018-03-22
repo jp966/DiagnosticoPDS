@@ -60,7 +60,7 @@ public class ListaContacto extends HttpServlet {
 			for (int i = 0; i < arrayContactos.length; i++) {
 				out.println("<tr>");
 				
-					//out.println("<td style='display:none;'><span id='idContacto'>" + arrayContactos[i].getORMID() + "</span></td>");
+					out.println("<td style='display:none;'><span id='idContacto'>" + arrayContactos[i].getORMID() + "</span></td>");
 					out.println("<td>" + arrayContactos[i].getNombre() + "</td>");
 					out.println("<td>" + arrayContactos[i].getApellido() + "</td>");
 					out.println("<td>" + arrayContactos[i].getRun() + "</td>");
@@ -69,7 +69,7 @@ public class ListaContacto extends HttpServlet {
 					out.println("<td>");
 						out.println("<button title='Bitácora' type=\"button\" class=\"btn\" style=\"background-color: #ff8533\"><i class=\"far fa-address-book\" style=\"color:white;\"></i></button>");
 						out.println("<button title='Editar' type=\"button\" class=\"btn\" style=\"background-color:#009999;\"><i class=\"far fa-edit\" style=\"color:white;\"></i></button>");
-						out.println("<button title='Eliminar' name='eliminar-"+arrayContactos[i].getORMID()+"'"+" data-toggle=\"modal\" data-target=\"#modalEliminarContacto\" type=\"button\" class=\"btn btn-danger\"><i class=\"far fa-trash-alt\"></i></button>");
+						out.println("<button id='eliminar' title='Eliminar' data-toggle=\"modal\" data-target=\"#modalEliminarContacto\" type=\"button\" class=\"btn btn-danger\"><i class=\"far fa-trash-alt\"></i></button>");
 					out.println("</td>");
 						
 				out.println("</tr>");

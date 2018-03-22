@@ -31,7 +31,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
-      	<!-- <th style="display:none;">ID</th> -->
+      	<th style="display:none;">ID</th> 
         <th>Nombre</th>
         <th>Apelido</th>
         <th>RUN</th>
