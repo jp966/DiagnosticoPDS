@@ -78,7 +78,7 @@ public class EditaContacto extends HttpServlet {
 						"	    <input type=\"text\" maxlength=\"12\" class=\"form-control\" id=\"runContactoEditar\" placeholder=\"RUN\" value='"+contacto.getRun()+"' required>\n" + 
 						"	  </div>\n" + 
 						"	  <div class=\"form-group col-md-6\">\n" + 
-						"	    <label for=\"mailContacto\">mail</label>\n" + 
+						"	    <label for=\"mailContacto\">Mail</label>\n" + 
 						"	    <input type=\"mail\" class=\"form-control\" id=\"mailContactoEditar\" placeholder=\"Mail\" value='"+contacto.getMail()+"' required>\n" + 
 						"	  </div>\n" + 
 						"  \n" + 

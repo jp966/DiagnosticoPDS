@@ -11,6 +11,8 @@ import org.orm.PersistentException;
 
 import sistema.Contacto;
 import sistema.ContactoDAO;
+import sistema.AnotacionDAO;
+import sistema.Anotacion;
 
 /**
  * Servlet implementation class EliminaContacto
@@ -43,6 +45,10 @@ public class EliminaContacto extends HttpServlet {
 		Contacto contacto;
 		try {
 			contacto = ContactoDAO.loadContactoByORMID(Integer.parseInt(idContacto));
+			Anotacion[] anotaciones = AnotacionDAO.listAnotacionByQuery("contactoid="+idContacto, null);
+			for(int i=0;i<anotaciones.length;i++) {
+				AnotacionDAO.deleteAndDissociate(anotaciones[i]);
+			}
 			ContactoDAO.deleteAndDissociate(contacto);
 		} catch (NumberFormatException | PersistentException e) {
 			// TODO Auto-generated catch block

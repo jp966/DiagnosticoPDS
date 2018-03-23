@@ -1,6 +1,8 @@
 $(document).ready(function(){
 	
 	var idContacto="0";
+	var esBusquedaActivada=false;
+	var esBusquedaAvanzada=false;
 	
 	$.ajax({
 		type:"POST",
@@ -25,6 +27,74 @@ $(document).ready(function(){
 
 
 
+	});
+	//Botón para habilitar las búsquedas
+	$("#botonHabilitarBusqueda").on("click",function(){
+		if($("#formBusquedaContacto").css("display")==="none"){
+		  $("#botonHabilitarBusqueda").html("<span  style='color:white;'>Deshabilitar búsqueda <i class='fas fa-search'></i></span>");
+		  $("#formBusquedaContacto").show();
+		}else{
+			$("#nombreContactoBuscar").val("");
+			$("#apellidoContactoBuscar").val("");
+			$("#runContactoBuscar").val("");
+			$("#mailContactoBuscar").val("");
+			$("#direccionContactoBuscar").val("");
+			$("#telefonoContactoBuscar").val("");
+			$("#fechaNacimientoContactoBuscar").val("");
+			$("#residenciaContactoBuscar").val("");
+			$("#organizacionContactoBuscar").val("");
+			$("#fotoContactoBuscar").val("");
+			$('#checkBusquedaAvanzada').prop('checked', false); // Unchecks it
+			esBusquedaAvanzada=false;
+			$("#botonHabilitarBusqueda").html("<span  style='color:white;'>Habilitar búsqueda <i class='fas fa-search'></i></span>");
+			$("#formBusquedaContacto").hide();
+		}
+		
+	});
+	
+	$("#boton-buscar").on("click",function(){
+		var tipoBusqueda;
+		if(esBusquedaAvanzada){
+			tipoBusqueda="avanzada";
+		}else{
+			tipoBusqueda="simple";
+		}
+		$.ajax({
+			type:"POST",
+			url:"BuscaContacto",
+			data: {
+				nombre:$("#nombreContactoBuscar").val(),
+				apellido:$("#apellidoContactoBuscar").val(),
+				run:$("#runContactoBuscar").val(),
+				mail:$("#mailContactoBuscar").val(),
+				direccion:$("#direccionContactoBuscar").val(),
+				telefono:$("#telefonoContactoBuscar").val(),
+				fechaNacimiento:$("#fechaNacimientoContactoBuscar").val(),
+				lugarResidencia:$("#residenciaContactoBuscar").val(),
+				organizacion:$("#organizacionContactoBuscar").val(),
+				foto:$("#fotoContactoBuscar").val(),
+				tipoBusqueda:tipoBusqueda},
+			beforeSend: function(){
+				$("#body-tabla").empty();
+				$("#contenedor-cargando").show();
+				
+			},
+			success: function(respuesta){
+				$(respuesta).appendTo("#body-tabla");
+				
+			},
+			error: function(xhr, status, error) {
+				  var err = eval("(" + xhr.responseText + ")");
+				  alert(err.Message);
+			},
+			complete: function(){
+				$("#contenedor-cargando").hide();
+			}
+		});
+	});
+	
+	$("#checkBusquedaAvanzada").change(function(){
+		esBusquedaAvanzada=!esBusquedaAvanzada;
 	});
 	
 	
@@ -244,6 +314,6 @@ $(document).ready(function(){
 		idContacto = $(this).closest('td').siblings().find('#idContacto').html();
 	});
 		
-
+	
 
 });

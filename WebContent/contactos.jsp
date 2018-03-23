@@ -25,9 +25,97 @@
 
 <div class="container">
   <h2 style="margin-top:20px;margin-bottom:70px;"> Lista de contactos</h2>
-  <button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="btn btn-primary" style="margin-bottom:20px;">Añadir nuevo contacto <i class="fas fa-user-plus"></i>
-
-  </button>
+  <div class="row">
+  	
+  		<button data-toggle="modal" data-target="#exampleModalCenter" type="button" class="btn btn-primary" style="margin-bottom:20px;margin-right:10px;">Añadir nuevo contacto <i class="fas fa-user-plus"></i>
+  		</button>
+  	
+  		<button id="botonHabilitarBusqueda" type="button" class="btn" style="margin-bottom:20px;background-color:#00cc66;"><span  style="color:white;">Habilitar búsqueda <i class="fas fa-search"
+></i></span>
+ 		</button>
+ 		
+ 		
+ 	
+  </div>
+  
+  <form id="formBusquedaContacto" style="display:none;">
+  
+  <div class="form-check" style="margin-bottom:10px;">
+		  <input class="form-check-input" type="checkbox" id="checkBusquedaAvanzada">
+		  <label class="form-check-label" for="checkBusquedaAvanzada">
+		    <span style="font-weight:bold;">Búsqueda avanzada</span>
+		  </label>
+  </div>
+  
+  <div class="form-row">
+  
+    <div class="form-group col-md-2">
+      <label for="nombreContactoBuscar">Nombre</label>
+      <input type="text" class="form-control" id="nombreContactoBuscar" placeholder="Nombre" required>
+    </div>
+    
+    <div class="form-group col-md-2">
+      <label for="apellidoContactoBuscar">Apellido</label>
+      <input type="text" class="form-control" id="apellidoContactoBuscar" placeholder="Apellido" required>
+    </div>
+    
+    <div class="form-group col-md-2">
+	    <label for="runContactoBuscar">RUN</label>
+	    <input type="text" maxlength="12" class="form-control" id="runContactoBuscar" placeholder="RUN" required>
+	</div>
+	
+	<div class="form-group col-md-2">
+	    <label for="mailContactoBuscar">Mail</label>
+	    <input type="mail" class="form-control" id="mailContactoBuscar" placeholder="Mail" required>
+	</div>
+	
+	<div class="form-group col-md-2">
+      <label for="direccionContactoBuscar">Dirección</label>
+      <input type="text" class="form-control" id="direccionContactoBuscar" placeholder="Dirección" required>
+    </div>
+    
+    <div class="form-group col-md-2">
+      <label for="residenciaContactoBuscar">Lugar residencia</label>
+     <input type="text" class="form-control" id="residenciaContactoBuscar" placeholder="Lugar residencia" required>
+      
+    </div>
+    
+  </div>
+  
+  <div class="form-row">
+  	 <div class="form-group col-md-2">
+      <label for="fechaNacimientoContactoBuscar">Fecha nacimiento</label>
+      <input type="text" class="form-control" id="fechaNacimientoContactoBuscar" placeholder="Fecha nacimiento" required>
+    </div>
+    
+    <div class="form-group col-md-2">
+      <label for="telefonoContactoBuscar">Teléfono</label>
+     <input type="text" maxlength="20" class="form-control" id="telefonoContactoBuscar" placeholder="Teléfono" required>
+      
+    </div>
+    
+    <div class="form-group col-md-2">
+      <label for="organizacionContactoBuscar">Organización</label>
+      <input type="text" class="form-control" id="organizacionContactoBuscar" placeholder="Organización en la que trabaja" required>
+    </div>
+    
+     <div class="form-group col-md-2">
+	      <label for="fotoContactoBuscar">Foto</label>
+	     <input type="text" class="form-control" id="fotoContactoBuscar" placeholder="Foto contacto (enlace)" required>
+	      
+	    </div>
+	    
+	  <div class="form-group col-md-2">
+	  	<button id="boton-buscar" type="button" class="btn" style="height:50px;background-color:#00cc66;"><span  style="color:white;">Buscar <i class="fas fa-search"
+></i></span></button>
+	  </div>
+	 
+	 
+  </div>
+  
+  </form>	
+  
+  
   <table class="table table-striped">
     <thead>
       <tr>
