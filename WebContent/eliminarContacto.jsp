@@ -10,7 +10,7 @@
 	<form id="formEliminarContacto">
 		<div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-		        <button id="boton-eliminar" type="submit" class="btn btn-primary">Eliminar contacto</button>
+		        <button id="boton-eliminar" type="button" class="btn btn-primary">Eliminar contacto</button>
 		</div>
 	</form>
 </body>

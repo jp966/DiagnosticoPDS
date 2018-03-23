@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	
-	$( "#formNuevoContacto" ).submit(function( event ) {
+	$("body").on("click","#boton-agregar",function( ) {
 		alert("enviado")
 		$.ajax({
 			type:"POST",
@@ -22,7 +22,8 @@ $(document).ready(function(){
 				$("#contenedor-cargando").show();
 			},
 			success: function(respuesta){
-				//cerrar modal
+				$("#exampleModalCenter").modal('toggle');
+				location.reload();
 				
 			},
 			error: function(xhr, status, error) {

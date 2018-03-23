@@ -94,7 +94,7 @@
   
   <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="submit" class="btn btn-primary">Añadir nuevo contacto</button>
+        <button id="boton-agregar" type="button" class="btn btn-primary">Añadir nuevo contacto <i class="far fa-plus-square"></i></button>
   </div>
   
 </form>
