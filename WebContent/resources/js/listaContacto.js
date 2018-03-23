@@ -28,21 +28,21 @@ $(document).ready(function(){
 	});
 	
 	
-	//Botón ver detalle contacto de la tabla
+	//Botón ver bitácora contacto de la tabla
 	$("body").on("click","#verBitacora",function(){
 		idContacto = $(this).closest('td').siblings().find('#idContacto').html();
-		//alert(idContacto);
-		/*
+		
+		
 		$.ajax({
 			type:"POST",
 			url:"BitacoraContacto",
-			data: {idContacto:idContacto},
+			data: {idContacto:idContacto,operacion:"obtenerAnotaciones"},
 			beforeSend: function(){
-				$("#cardBitacoraContacto").empty();
+				$("#listaAnotaciones").empty();
 				$("#contenedor-cargando").show();
 			},
 			success: function(respuesta){
-				$(respuesta).appendTo("#cardBitacoraContacto");
+				$(respuesta).appendTo("#listaAnotaciones");
 				
 			},
 			error: function(xhr, status, error) {
@@ -53,10 +53,65 @@ $(document).ready(function(){
 				$("#contenedor-cargando").hide();
 			}
 
-		});*/
-		
+		});
 	});
 	
+	//Botón bitácora contacto de modal
+	$("body").on("click","#boton-anotacion",function(){
+		//si el formulario de creacion de anotación es válido, entonces...
+		if($("#tituloAnotacion").val()!="" && $("#contenidoAnotacion").val()!="" ){
+			$.ajax({
+				type:"POST",
+				url:"BitacoraContacto",
+				data: {idContacto:idContacto,
+					titulo:$("#tituloAnotacion").val(),
+					contenido:$("#contenidoAnotacion").val(),
+					operacion:"crearAnotacion"},
+				beforeSend: function(){
+					//$("#listaAnotaciones").empty();
+					//$("#contenedor-cargando").show();
+				},
+				success: function(respuesta){
+					$("#tituloAnotacion").val("");
+					$("#contenidoAnotacion").val("");
+					
+
+					$.ajax({
+						type:"POST",
+						url:"BitacoraContacto",
+						data: {idContacto:idContacto,operacion:"obtenerAnotaciones"},
+						beforeSend: function(){
+							$("#listaAnotaciones").empty();
+							$("#contenedor-cargando").show();
+						},
+						success: function(respuesta){
+							$(respuesta).appendTo("#listaAnotaciones");
+							
+						},
+						error: function(xhr, status, error) {
+							  var err = eval("(" + xhr.responseText + ")");
+							  alert(err.Message);
+						},
+						complete: function(){
+							$("#contenedor-cargando").hide();
+						}
+
+					});
+					
+				},
+				error: function(xhr, status, error) {
+					  var err = eval("(" + xhr.responseText + ")");
+					  alert(err.Message);
+				},
+				complete: function(){
+					//$("#contenedor-cargando").hide();
+
+				}
+
+			});
+		}
+		
+	});
 	
 	
 	//Botón editar contacto
