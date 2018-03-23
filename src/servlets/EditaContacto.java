@@ -55,7 +55,7 @@ public class EditaContacto extends HttpServlet {
 			
 			try {
 				Contacto contacto = ContactoDAO.loadContactoByORMID(Integer.parseInt(idContacto));
-				
+				ContactoDAO.refresh(contacto);
 				out.println("<form id=\"formEditarContacto\">\n" + 
 						"  <div class=\"form-row\">\n" + 
 						"  \n" + 
@@ -172,6 +172,8 @@ public class EditaContacto extends HttpServlet {
 				contacto.setFoto(request.getParameter("foto"));
 				
 				ContactoDAO.save(contacto);
+				
+				ContactoDAO.refresh(contacto);
 				
 			} catch (NumberFormatException | PersistentException | ParseException e) {
 				// TODO Auto-generated catch block

@@ -88,6 +88,7 @@ public class AgregaContacto extends HttpServlet {
 		
 		try {
 			ContactoDAO.save(contacto);
+			ContactoDAO.refresh(contacto);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

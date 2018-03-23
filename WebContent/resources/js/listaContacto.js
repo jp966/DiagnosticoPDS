@@ -27,6 +27,38 @@ $(document).ready(function(){
 
 	});
 	
+	
+	//Botón ver detalle contacto de la tabla
+	$("body").on("click","#verBitacora",function(){
+		idContacto = $(this).closest('td').siblings().find('#idContacto').html();
+		//alert(idContacto);
+		/*
+		$.ajax({
+			type:"POST",
+			url:"BitacoraContacto",
+			data: {idContacto:idContacto},
+			beforeSend: function(){
+				$("#cardBitacoraContacto").empty();
+				$("#contenedor-cargando").show();
+			},
+			success: function(respuesta){
+				$(respuesta).appendTo("#cardBitacoraContacto");
+				
+			},
+			error: function(xhr, status, error) {
+				  var err = eval("(" + xhr.responseText + ")");
+				  alert(err.Message);
+			},
+			complete: function(){
+				$("#contenedor-cargando").hide();
+			}
+
+		});*/
+		
+	});
+	
+	
+	
 	//Botón editar contacto
 	$("body").on("click","#editar",function(){
 		idContacto = $(this).closest('td').siblings().find('#idContacto').html();
