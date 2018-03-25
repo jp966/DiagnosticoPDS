@@ -198,6 +198,9 @@ $(document).ready(function(){
 			},
 			success: function(respuesta){
 				$(respuesta).appendTo("#cardEditarContacto");
+
+				$("body").find("#fechaNacimientoContactoEditar").datepicker();
+				  
 				//alert(respuesta);
 				
 			},
@@ -214,7 +217,7 @@ $(document).ready(function(){
 	});
 	
 	//Botón editar contacto del modal
-	$("body").on("click","#boton-editar",function(){
+	$("body").on("submit","#formEditarContacto",function(){
 		$.ajax({
 			type:"POST",
 			url:"EditaContacto",
@@ -235,8 +238,8 @@ $(document).ready(function(){
 				$("#contenedor-cargando").show();
 			},
 			success: function(respuesta){
-				$("#modalEditarContacto").modal('toggle');
-				location.reload();
+				//$("#modalEditarContacto").modal('toggle');
+				//location.reload();
 				
 			},
 			error: function(xhr, status, error) {
@@ -250,6 +253,41 @@ $(document).ready(function(){
 		});
 		
 	});
+	
+	//validador rut al editar
+	$("body").on("change","#runContactoEditar",function() {
+
+	    $.ajax({
+			type:"POST",
+			url:"ValidaRunContacto",
+			data: {idContacto:idContacto,run:$(this).val(),operacion:"editar"},
+			beforeSend: function(){
+				
+			},
+			success: function(respuesta){
+				if(respuesta==='true'){
+					alert(respuesta);
+					$("body").find("#runContactoEditar").get(0).setCustomValidity('El run ya está registrado');
+					
+				}else if(respuesta==='false'){
+					$("body").find("#runContactoEditar").get(0).setCustomValidity('');
+				} 
+				//alert(respuesta);
+				
+			},
+			error: function(xhr, status, error) {
+				  var err = eval("(" + xhr.responseText + ")");
+				  alert(err.Message);
+			},
+			complete: function(){
+				
+			}
+
+		});
+
+	  });
+	
+	
 	
 	//Botón ver detalle contacto de la tabla
 	$("body").on("click","#verDetalle",function(){

@@ -9,8 +9,8 @@ package sistema;
  */
 
 /**
- * Licensee: 
- * License Type: Evaluation
+ * Licensee: juan(Universidad de La Frontera)
+ * License Type: Academic
  */
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;

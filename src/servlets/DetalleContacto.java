@@ -47,7 +47,7 @@ public class DetalleContacto extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		try {
 			Contacto contacto = ContactoDAO.loadContactoByORMID(Integer.parseInt(idContacto));
-			
+			System.out.println(contacto.getFechaNacimiento());
 			out.println("<div>");
 				out.println("<div class=\"card\" style=\"width:550px;border-style: none;display:block;\n" + 
 						"    margin:auto;\">");

@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.orm.PersistentException;
 
-import sistema.ContactoDAO;
 import sistema.Contacto;
+import sistema.ContactoDAO;
 
 /**
  * Servlet implementation class AgregaContacto
@@ -54,8 +54,8 @@ public class AgregaContacto extends HttpServlet {
 		String organizacion = request.getParameter("organizacion");
 		String foto = request.getParameter("foto");
 		
-		Contacto contacto = ContactoDAO.createContacto();
-		
+		//Contacto contacto = ContactoDAO.createContacto();
+		Contacto contacto = new Contacto();
 		
 		/*
 		String[] parts = fechaNacimiento.split("-");
@@ -68,7 +68,7 @@ public class AgregaContacto extends HttpServlet {
 		*/
 		
 		try {
-			Date fecha = new SimpleDateFormat("yyyy-MM-dd").parse(fechaNacimiento);
+			Date fecha = new SimpleDateFormat("MM/dd/yyyy").parse(fechaNacimiento);
 			contacto.setNombre(nombre);
 			contacto.setApellido(apellido);
 			contacto.setRun(run);
@@ -88,7 +88,7 @@ public class AgregaContacto extends HttpServlet {
 		
 		try {
 			ContactoDAO.save(contacto);
-			ContactoDAO.refresh(contacto);
+			//ContactoDAO.refresh(contacto);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

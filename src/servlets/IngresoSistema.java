@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.orm.PersistentException;
 
+import sistema.ListPruebaDiagnosticoData;
 import sistema.Usuario;
 import sistema.UsuarioDAO;
-import sistema.ListPruebaDiagnosticoData;
 
 /**
  * Servlet implementation class IngresoSistema

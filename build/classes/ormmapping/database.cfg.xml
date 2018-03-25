@@ -289,7 +289,7 @@
   <Setting type="2">
     <Driver>MySQL (Connector/J Driver)</Driver>
     <DriverFiles>/home/juan/Escritorio/JDBC connector/mysql-connector-java-5.1.46/mysql-connector-java-5.1.46.jar</DriverFiles>
-    <Dialect>org.hibernate.dialect.MySQLDialect</Dialect>
+    <Dialect>org.hibernate.dialect.MySQLInnoDBDialect</Dialect>
     <DriverClass>com.mysql.jdbc.Driver</DriverClass>
     <URL>jdbc:mysql://localhost:3306/clientes</URL>
     <UserName>root</UserName>

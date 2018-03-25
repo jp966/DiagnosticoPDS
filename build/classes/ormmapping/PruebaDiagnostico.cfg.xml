@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--
-Licensee: 
-License Type: Evaluation
+Licensee: juan(Universidad de La Frontera)
+License Type: Academic
 -->
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
@@ -9,7 +9,7 @@ License Type: Evaluation
 <hibernate-configuration>
 	<session-factory>
    	<!-- properties -->
-		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="connection.url">jdbc:mysql://localhost:3306/clientes</property>
 		<property name="connection.username">root</property>

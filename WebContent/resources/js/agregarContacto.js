@@ -1,7 +1,43 @@
 $(document).ready(function(){
 	
-	$("body").on("click","#boton-agregar",function( ) {
-		alert("enviado")
+	$( function() {
+	    $( "#fechaNacimientoContacto" ).datepicker();
+	  } );
+	
+	$("body").on("change","#runContacto",function() {
+
+	    $.ajax({
+			type:"POST",
+			url:"ValidaRunContacto",
+			data: {run:$(this).val(),operacion:"crear"},
+			beforeSend: function(){
+				
+			},
+			success: function(respuesta){
+				if(respuesta==='true'){
+					alert(respuesta);
+					$("body").find("#runContacto").get(0).setCustomValidity('El run ya está registrado');
+					
+				}else if(respuesta=="false"){
+					$("body").find("#runContacto").get(0).setCustomValidity('');
+				} 
+				//alert(respuesta);
+				
+			},
+			error: function(xhr, status, error) {
+				  var err = eval("(" + xhr.responseText + ")");
+				  alert(err.Message);
+			},
+			complete: function(){
+				
+			}
+
+		});
+
+	  });
+	  
+	
+	$("body").on("submit","#formNuevoContacto",function( ) {
 		$.ajax({
 			type:"POST",
 			url:"AgregaContacto",
@@ -22,8 +58,8 @@ $(document).ready(function(){
 				$("#contenedor-cargando").show();
 			},
 			success: function(respuesta){
-				$("#exampleModalCenter").modal('toggle');
-				location.reload();
+				//$("#exampleModalCenter").modal('toggle');
+				//location.reload();
 				
 			},
 			error: function(xhr, status, error) {

@@ -13,11 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.orm.PersistentException;
 
-import com.google.gson.Gson;
-
 import sistema.Contacto;
 import sistema.ContactoDAO;
-
 import sistema.Usuario;
 import sistema.UsuarioDAO;
 
@@ -55,9 +52,9 @@ public class ListaContacto extends HttpServlet {
 		
 		try {
 			Contacto[] arrayContactos = ContactoDAO.listContactoByQuery(null,null);
-			
+			System.out.println(arrayContactos.length);
 			for (int i = 0; i < arrayContactos.length; i++) {
-				ContactoDAO.refresh(arrayContactos[i]);
+				//ContactoDAO.refresh(arrayContactos[i]);
 				out.println("<tr>");
 				
 					out.println("<td style='display:none;'><span id='idContacto'>" + arrayContactos[i].getORMID() + "</span></td>");

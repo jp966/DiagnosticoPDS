@@ -5,6 +5,8 @@
 <head>
 <script src="resources/js/agregarContacto.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
 	<form id="formNuevoContacto">
@@ -94,7 +96,7 @@
   
   <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button id="boton-agregar" type="button" class="btn btn-primary">Añadir nuevo contacto <i class="far fa-plus-square"></i></button>
+        <button id="boton-agregar" type="submit" class="btn btn-primary">Añadir nuevo contacto <i class="far fa-plus-square"></i></button>
   </div>
   
 </form>

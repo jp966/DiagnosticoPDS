@@ -123,6 +123,7 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
+    <ExtraDDLClause>AUTO_INCREMENT=45</ExtraDDLClause>
   </Entity>
   <Entity name="usuario" Unlogged="false" PKClustered="0">
     <Column name="id">
@@ -158,6 +159,7 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
+    <ExtraDDLClause>AUTO_INCREMENT=2</ExtraDDLClause>
   </Entity>
   <Entity name="anotacion" Unlogged="false" PKClustered="0">
     <Column name="id">

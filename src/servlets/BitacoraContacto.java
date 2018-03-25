@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.orm.PersistentException;
 
-import sistema.ContactoDAO;
-import sistema.Contacto;
 import sistema.Anotacion;
 import sistema.AnotacionDAO;
+import sistema.Contacto;
+import sistema.ContactoDAO;
 
 /**
  * Servlet implementation class BitacoraContacto

@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.orm.PersistentException;
 
-import sistema.ContactoDAO;
 import sistema.Contacto;
+import sistema.ContactoDAO;
 
 /**
  * Servlet implementation class EditaContacto
@@ -60,11 +60,11 @@ public class EditaContacto extends HttpServlet {
 						"  <div class=\"form-row\">\n" + 
 						"  \n" + 
 						"    <div class=\"form-group col-md-6\">\n" + 
-						"      <label for=\"nombreContacto\">Nombre</label>\n" + 
+						"      <label for=\"nombreContactEditaro\">Nombre</label>\n" + 
 						"      <input type=\"text\" class=\"form-control\" id=\"nombreContactoEditar\" placeholder=\"Nombre\" value='"+contacto.getNombre()+"' required>\n" + 
 						"    </div>\n" + 
 						"    <div class=\"form-group col-md-6\">\n" + 
-						"      <label for=\"apellidoContacto\">Apellido</label>\n" + 
+						"      <label for=\"apellidoContactoEditar\">Apellido</label>\n" + 
 						"      <input type=\"text\" class=\"form-control\" id=\"apellidoContactoEditar\" placeholder=\"Apellido\" value='"+contacto.getApellido()+"' required>\n" + 
 						"    </div>\n" + 
 						"    \n" + 
@@ -74,11 +74,11 @@ public class EditaContacto extends HttpServlet {
 						"  <div class=\"form-row\">\n" + 
 						"  \n" + 
 						"	  <div class=\"form-group col-md-6\">\n" + 
-						"	    <label for=\"runContacto\">RUN</label>\n" + 
+						"	    <label for=\"runContactoEditar\">RUN</label>\n" + 
 						"	    <input type=\"text\" maxlength=\"12\" class=\"form-control\" id=\"runContactoEditar\" placeholder=\"RUN\" value='"+contacto.getRun()+"' required>\n" + 
 						"	  </div>\n" + 
 						"	  <div class=\"form-group col-md-6\">\n" + 
-						"	    <label for=\"mailContacto\">Mail</label>\n" + 
+						"	    <label for=\"mailContactoEditar\">Mail</label>\n" + 
 						"	    <input type=\"mail\" class=\"form-control\" id=\"mailContactoEditar\" placeholder=\"Mail\" value='"+contacto.getMail()+"' required>\n" + 
 						"	  </div>\n" + 
 						"  \n" + 
@@ -88,7 +88,7 @@ public class EditaContacto extends HttpServlet {
 						"  <div class=\"form-row\">\n" + 
 						"  \n" + 
 						"    <div class=\"form-group col-md-12\">\n" + 
-						"      <label for=\"direccionContacto\">Dirección</label>\n" + 
+						"      <label for=\"direccionContactoEditar\">Dirección</label>\n" + 
 						"      <input type=\"text\" class=\"form-control\" id=\"direccionContactoEditar\" placeholder=\"Dirección\" value='"+contacto.getDireccion()+"' required>\n" + 
 						"    </div>\n" + 
 						"    \n" + 
@@ -98,7 +98,7 @@ public class EditaContacto extends HttpServlet {
 						"   <div class=\"form-row\">\n" + 
 						"  \n" + 
 						"    <div class=\"form-group col-md-12\">\n" + 
-						"      <label for=\"residenciaContacto\">Lugar residencia</label>\n" + 
+						"      <label for=\"residenciaContactoEditar\">Lugar residencia</label>\n" + 
 						"     <input type=\"text\" class=\"form-control\" id=\"residenciaContactoEditar\" placeholder=\"Lugar residencia\" value='"+contacto.getLugarResidencia()+"' required>\n" + 
 						"      \n" + 
 						"    </div>\n" + 
@@ -108,12 +108,12 @@ public class EditaContacto extends HttpServlet {
 						"  <div class=\"form-row\">\n" + 
 						"  \n" + 
 						"    <div class=\"form-group col-md-6\">\n" + 
-						"      <label for=\"fechaNacimientoContacto\">Fecha nacimiento</label>\n" + 
-						"      <input type=\"text\" class=\"form-control\" id=\"fechaNacimientoContactoEditar\" placeholder=\"Fecha nacimiento\" value='"+contacto.getFechaNacimiento()+"' required>\n" + 
+						"      <label for=\"fechaNacimientoContactoEditar\">Fecha nacimiento</label>\n" + 
+						"      <input type=\"text\" class=\"form-control\" id=\"fechaNacimientoContactoEditar\" placeholder=\"Fecha nacimiento\" value='"+(contacto.getFechaNacimiento().getMonth()+1)+"/"+contacto.getFechaNacimiento().getDate()+"/"+(contacto.getFechaNacimiento().getYear()+1900)+"' required>\n" + 
 						"    </div>\n" + 
 						"    \n" + 
 						"    <div class=\"form-group col-md-6\">\n" + 
-						"      <label for=\"telefonoContacto\">Teléfono</label>\n" + 
+						"      <label for=\"telefonoContactoEditar\">Teléfono</label>\n" + 
 						"     <input type=\"text\" maxlength=\"20\" class=\"form-control\" id=\"telefonoContactoEditar\" placeholder=\"Teléfono\" value='"+contacto.getTelefono()+"' required>\n" + 
 						"      \n" + 
 						"    </div>\n" + 
@@ -124,7 +124,7 @@ public class EditaContacto extends HttpServlet {
 						"  <div class=\"form-row\">\n" + 
 						"  \n" + 
 						"    <div class=\"form-group col-md-12\">\n" + 
-						"      <label for=\"organizacionContacto\">Organización</label>\n" + 
+						"      <label for=\"organizacionContactoEditar\">Organización</label>\n" + 
 						"      <input type=\"text\" class=\"form-control\" id=\"organizacionContactoEditar\" placeholder=\"Organización en la que trabaja\" value='"+contacto.getOrganizacion()+"' required>\n" + 
 						"    </div>\n" + 
 						"    \n" + 
@@ -133,7 +133,7 @@ public class EditaContacto extends HttpServlet {
 						"  \n" + 
 						"  <div class=\"form-row\">\n" + 
 						"	  <div class=\"form-group col-md-12\">\n" + 
-						"	      <label for=\"fotoContacto\">Foto</label>\n" + 
+						"	      <label for=\"fotoContactoEditar\">Foto</label>\n" + 
 						"	     <input type=\"text\" class=\"form-control\" id=\"fotoContactoEditar\" placeholder=\"Foto contacto (enlace)\" value='"+contacto.getFoto()+"' required>\n" + 
 						"	      \n" + 
 						"	    </div>\n" + 
@@ -143,7 +143,7 @@ public class EditaContacto extends HttpServlet {
 						"  \n" + 
 						"  <div class=\"modal-footer\">\n" + 
 						"        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cerrar</button>\n" + 
-						"        <button id='boton-editar' type=\"button\" class=\"btn btn-primary\">Guardar cambios <i class=\"far fa-save\"></i></button>\n" + 
+						"        <button id='boton-editar' type=\"submit\" class=\"btn btn-primary\">Guardar cambios <i class=\"far fa-save\"></i></button>\n" + 
 						"  </div>\n" + 
 						"  \n" + 
 						"</form>");
@@ -159,7 +159,7 @@ public class EditaContacto extends HttpServlet {
 			try {
 				Contacto contacto = ContactoDAO.loadContactoByORMID(Integer.parseInt(idContacto));
 				
-				Date fecha = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("fechaNacimiento"));
+				Date fecha = new SimpleDateFormat("MM/dd/yyyy").parse(request.getParameter("fechaNacimiento"));
 				contacto.setNombre(request.getParameter("nombre"));
 				contacto.setApellido(request.getParameter("apellido"));
 				contacto.setRun(request.getParameter("run"));
@@ -173,7 +173,7 @@ public class EditaContacto extends HttpServlet {
 				
 				ContactoDAO.save(contacto);
 				
-				ContactoDAO.refresh(contacto);
+				//ContactoDAO.refresh(contacto);
 				
 			} catch (NumberFormatException | PersistentException | ParseException e) {
 				// TODO Auto-generated catch block

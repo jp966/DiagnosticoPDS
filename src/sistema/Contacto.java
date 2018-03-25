@@ -9,8 +9,8 @@ package sistema;
  */
 
 /**
- * Licensee: 
- * License Type: Evaluation
+ * Licensee: juan(Universidad de La Frontera)
+ * License Type: Academic
  */
 public class Contacto {
 	public Contacto() {
@@ -52,7 +52,6 @@ public class Contacto {
 	private String organizacion;
 	
 	private String foto;
-	
 	
 	private java.util.Set ORM_anotacion = new java.util.HashSet();
 	

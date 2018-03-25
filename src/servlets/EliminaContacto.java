@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.orm.PersistentException;
 
+import sistema.Anotacion;
+import sistema.AnotacionDAO;
 import sistema.Contacto;
 import sistema.ContactoDAO;
-import sistema.AnotacionDAO;
-import sistema.Anotacion;
 
 /**
  * Servlet implementation class EliminaContacto
