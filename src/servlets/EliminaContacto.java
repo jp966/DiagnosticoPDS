@@ -8,11 +8,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
 
 import sistema.Anotacion;
 import sistema.AnotacionDAO;
 import sistema.Contacto;
 import sistema.ContactoDAO;
+import sistema.PruebaDiagnosticoPersistentManager;
 
 /**
  * Servlet implementation class EliminaContacto
@@ -44,13 +46,15 @@ public class EliminaContacto extends HttpServlet {
 		String idContacto = request.getParameter("idContacto");
 		Contacto contacto;
 		try {
+			Thread.sleep(2000);
 			contacto = ContactoDAO.loadContactoByORMID(Integer.parseInt(idContacto));
 			Anotacion[] anotaciones = AnotacionDAO.listAnotacionByQuery("contactoid="+idContacto, null);
 			for(int i=0;i<anotaciones.length;i++) {
 				AnotacionDAO.deleteAndDissociate(anotaciones[i]);
+				
 			}
 			ContactoDAO.deleteAndDissociate(contacto);
-		} catch (NumberFormatException | PersistentException e) {
+		} catch (NumberFormatException | PersistentException | InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

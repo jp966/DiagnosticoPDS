@@ -13,9 +13,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
 
 import sistema.Contacto;
 import sistema.ContactoDAO;
+import sistema.PruebaDiagnosticoPersistentManager;
 
 /**
  * Servlet implementation class EditaContacto
@@ -54,6 +56,7 @@ public class EditaContacto extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			
 			try {
+				//Thread.sleep(2000);
 				Contacto contacto = ContactoDAO.loadContactoByORMID(Integer.parseInt(idContacto));
 				ContactoDAO.refresh(contacto);
 				out.println("<form id=\"formEditarContacto\">\n" + 
@@ -157,6 +160,7 @@ public class EditaContacto extends HttpServlet {
 		//Si la operación que se realiza es el guardado de cambios al editar...
 		}else if(operacion.equals("guardarCambios")) {
 			try {
+				Thread.sleep(2000);
 				Contacto contacto = ContactoDAO.loadContactoByORMID(Integer.parseInt(idContacto));
 				
 				Date fecha = new SimpleDateFormat("MM/dd/yyyy").parse(request.getParameter("fechaNacimiento"));
@@ -172,10 +176,9 @@ public class EditaContacto extends HttpServlet {
 				contacto.setFoto(request.getParameter("foto"));
 				
 				ContactoDAO.save(contacto);
-				
 				//ContactoDAO.refresh(contacto);
 				
-			} catch (NumberFormatException | PersistentException | ParseException e) {
+			} catch (NumberFormatException | PersistentException | ParseException | InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

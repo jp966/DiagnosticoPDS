@@ -20,9 +20,10 @@ public class ListPruebaDiagnosticoData {
 		Contacto[] contactos = ContactoDAO.listContactoByQuery(null, null);
 		length = Math.min(contactos.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
-			System.out.println(contactos[i]);
+			System.out.println(contactos[i].getNombre());
 		}
 		System.out.println(length + " record(s) retrieved.");
+	
 		
 		System.out.println("Listing Usuario...");
 		Usuario[] usuarios = UsuarioDAO.listUsuarioByQuery(null, null);

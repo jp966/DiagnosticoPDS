@@ -48,6 +48,7 @@ public class BitacoraContacto extends HttpServlet {
 		String operacion = request.getParameter("operacion");
 		
 		try {
+			Thread.sleep(2000);
 			Contacto contacto = ContactoDAO.loadContactoByORMID(Integer.parseInt(idContacto));
 			
 			if(operacion.equals("obtenerAnotaciones")) {
@@ -88,7 +89,7 @@ public class BitacoraContacto extends HttpServlet {
 		
 		
 		
-		} catch (NumberFormatException | PersistentException e) {
+		} catch (NumberFormatException | PersistentException | InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

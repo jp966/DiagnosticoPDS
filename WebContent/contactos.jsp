@@ -22,6 +22,12 @@
 </head>
 <body>
 
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand"><i class="fas fa-clipboard-list"></i> Gestión contactos</a>
+  <button onclick="location.href = 'index.jsp'"  class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar sesión</button>
+    
+</nav>
+
 <div class="container">
   <h2 style="margin-top:20px;margin-bottom:70px;"> Lista de contactos</h2>
   <div class="row">

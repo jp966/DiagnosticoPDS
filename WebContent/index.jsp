@@ -6,12 +6,21 @@
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <script src="resources/js/bootstrap.min.js"></script>
 <script src="resources/js/bootstrap.js"></script>
+<link rel="stylesheet" href="resources/fontawesome/css/fontawesome-all.css">
+<link rel="stylesheet" href="resources/fontawesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="resources/fontawesome/css/fontawesome.css">
+<link rel="stylesheet" href="resources/fontawesome/css/fontawesome.min.css">
 <script src="resources/js/jquery-3.3.1.min.js"></script>
 <script src="resources/js/ingresoSistema.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Sistema de registro</title>
 </head>
 <body>
+
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand"><i class="fas fa-clipboard-list"></i> Gestión contactos</a>
+    
+</nav>
 
 	<div class="row">
 	<div style="margin-top:100px;" class="col 12">

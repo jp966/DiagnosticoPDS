@@ -18,6 +18,8 @@ import sistema.ContactoDAO;
 import sistema.Usuario;
 import sistema.UsuarioDAO;
 
+import sistema.ListPruebaDiagnosticoData;
+
 /**
  * Servlet implementation class ListaContacto
  */
@@ -49,11 +51,21 @@ public class ListaContacto extends HttpServlet {
 		response.setContentType("text/plain");
 
 		PrintWriter out = response.getWriter();
-		
+		/*
+		ListPruebaDiagnosticoData listPruebaDiagnosticoData = new ListPruebaDiagnosticoData();
 		try {
+			listPruebaDiagnosticoData.listTestData();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}*/
+				
+		try {
+			//Thread.sleep(10000);
 			Contacto[] arrayContactos = ContactoDAO.listContactoByQuery(null,null);
 			System.out.println(arrayContactos.length);
-			for (int i = 0; i < arrayContactos.length; i++) {
+			//int length = Math.min(arrayContactos.length,FILAS);
+			for (int i = 0; i <arrayContactos.length; i++) {
 				//ContactoDAO.refresh(arrayContactos[i]);
 				out.println("<tr>");
 				

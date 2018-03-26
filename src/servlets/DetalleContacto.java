@@ -46,6 +46,7 @@ public class DetalleContacto extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 		try {
+			Thread.sleep(1000);
 			Contacto contacto = ContactoDAO.loadContactoByORMID(Integer.parseInt(idContacto));
 			System.out.println(contacto.getFechaNacimiento());
 			out.println("<div>");
@@ -96,7 +97,7 @@ public class DetalleContacto extends HttpServlet {
 				out.println("<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cerrar</button>\n");
 			out.println("</div>");
 		
-		} catch (NumberFormatException | PersistentException e) {
+		} catch (NumberFormatException | PersistentException | InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

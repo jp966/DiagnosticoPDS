@@ -12,9 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
 
 import sistema.Contacto;
 import sistema.ContactoDAO;
+import sistema.PruebaDiagnosticoPersistentManager;
 
 /**
  * Servlet implementation class AgregaContacto
