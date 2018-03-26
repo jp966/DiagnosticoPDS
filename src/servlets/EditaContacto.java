@@ -43,6 +43,7 @@ public class EditaContacto extends HttpServlet {
 	}
 
 	/**
+	 * Genera el código del formulario de edición de un contacto y guarda los cambios
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -160,7 +161,7 @@ public class EditaContacto extends HttpServlet {
 		//Si la operación que se realiza es el guardado de cambios al editar...
 		}else if(operacion.equals("guardarCambios")) {
 			try {
-				Thread.sleep(2000);
+				//Thread.sleep(2000);
 				Contacto contacto = ContactoDAO.loadContactoByORMID(Integer.parseInt(idContacto));
 				
 				Date fecha = new SimpleDateFormat("MM/dd/yyyy").parse(request.getParameter("fechaNacimiento"));
@@ -178,7 +179,7 @@ public class EditaContacto extends HttpServlet {
 				ContactoDAO.save(contacto);
 				//ContactoDAO.refresh(contacto);
 				
-			} catch (NumberFormatException | PersistentException | ParseException | InterruptedException e) {
+			} catch (NumberFormatException | PersistentException | ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

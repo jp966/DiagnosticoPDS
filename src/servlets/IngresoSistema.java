@@ -40,6 +40,7 @@ public class IngresoSistema extends HttpServlet {
 	}
 
 	/**
+	 * Valida que las credenciales sean válidas
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

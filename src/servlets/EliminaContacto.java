@@ -40,13 +40,14 @@ public class EliminaContacto extends HttpServlet {
 	}
 
 	/**
+	 * Elimina un contacto y anotaciones asociadas
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String idContacto = request.getParameter("idContacto");
 		Contacto contacto;
 		try {
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
 			contacto = ContactoDAO.loadContactoByORMID(Integer.parseInt(idContacto));
 			Anotacion[] anotaciones = AnotacionDAO.listAnotacionByQuery("contactoid="+idContacto, null);
 			for(int i=0;i<anotaciones.length;i++) {
@@ -54,7 +55,7 @@ public class EliminaContacto extends HttpServlet {
 				
 			}
 			ContactoDAO.deleteAndDissociate(contacto);
-		} catch (NumberFormatException | PersistentException | InterruptedException e) {
+		} catch (NumberFormatException | PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

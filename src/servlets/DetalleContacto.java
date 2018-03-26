@@ -37,6 +37,7 @@ public class DetalleContacto extends HttpServlet {
 	}
 
 	/**
+	 * Genera el código de la ficha de un contacto
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -46,7 +47,7 @@ public class DetalleContacto extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 		try {
-			Thread.sleep(1000);
+			//Thread.sleep(1000);
 			Contacto contacto = ContactoDAO.loadContactoByORMID(Integer.parseInt(idContacto));
 			System.out.println(contacto.getFechaNacimiento());
 			out.println("<div>");
@@ -97,7 +98,7 @@ public class DetalleContacto extends HttpServlet {
 				out.println("<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cerrar</button>\n");
 			out.println("</div>");
 		
-		} catch (NumberFormatException | PersistentException | InterruptedException e) {
+		} catch (NumberFormatException | PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

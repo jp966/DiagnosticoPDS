@@ -200,6 +200,12 @@ $(document).ready(function(){
 				$(respuesta).appendTo("#cardEditarContacto");
 
 				$("body").find("#fechaNacimientoContactoEditar").datepicker();
+				
+				$("body").find("#runContactoEditar").rut({
+			    	formatOn: 'keyup',
+			        minimumLength: 8, // validar largo mínimo; default: 2
+			    	validateOn: 'change' // si no se quiere validar, pasar null
+			    });
 				  
 				//alert(respuesta);
 				

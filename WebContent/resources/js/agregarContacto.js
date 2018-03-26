@@ -2,6 +2,11 @@ $(document).ready(function(){
 	
 	$( function() {
 	    $( "#fechaNacimientoContacto" ).datepicker();
+	    $("#runContacto").rut({
+	    	formatOn: 'keyup',
+	        minimumLength: 8, // validar largo mínimo; default: 2
+	    	validateOn: 'change' // si no se quiere validar, pasar null
+	    });
 	  } );
 	
 	$("body").on("change","#runContacto",function() {

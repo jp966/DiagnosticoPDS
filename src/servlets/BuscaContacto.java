@@ -37,6 +37,7 @@ public class BuscaContacto extends HttpServlet {
 	}
 
 	/**
+	 * Genera el código de la tabla de contactos de acuerdo a la búsqueda avanzada o simple
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -75,7 +76,7 @@ public class BuscaContacto extends HttpServlet {
 		}else if(run.equals("") && tipoBusqueda.equals("avanzada")) {
 			run="'%'";
 		}else {
-			run="'%"+run+"%'";
+			run="'"+run+"%'";
 		}
 			
 		if(mail.equals("") && tipoBusqueda.equals("simple")) {

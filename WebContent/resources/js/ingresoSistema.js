@@ -9,13 +9,15 @@ $(document).ready(function(){
 			data: {nombreUsuario:$("#nombreUsuario").val(),password:$("#password").val()},
 			beforeSend: function(){
 				$("#contenedor-cargando").css("display", "inline-block");
+				$("#contenedor-mensaje").empty();
 			},
 			success: function(respuesta){
 				
 				if(respuesta==="true"){
 					$(location).attr('href','contactos.jsp');
 				}else if(respuesta==="false"){
-					alert("El usuario o contraseña no son válidas")
+					$("#contenedor-mensaje").append("<span style='color:red'>Usuario o contraseña incorrectas</span>")
+					//alert("El usuario o contraseña no son válidas")
 				}
 				
 				

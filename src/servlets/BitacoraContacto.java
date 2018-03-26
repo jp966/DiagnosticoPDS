@@ -41,6 +41,7 @@ public class BitacoraContacto extends HttpServlet {
 	}
 
 	/**
+	 * Genera el código de la lista de anotaciones y guarda nuevas.
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -48,7 +49,7 @@ public class BitacoraContacto extends HttpServlet {
 		String operacion = request.getParameter("operacion");
 		
 		try {
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
 			Contacto contacto = ContactoDAO.loadContactoByORMID(Integer.parseInt(idContacto));
 			
 			if(operacion.equals("obtenerAnotaciones")) {
@@ -89,7 +90,7 @@ public class BitacoraContacto extends HttpServlet {
 		
 		
 		
-		} catch (NumberFormatException | PersistentException | InterruptedException e) {
+		} catch (NumberFormatException | PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

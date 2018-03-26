@@ -45,6 +45,7 @@
 		        </div>
 		    </form>
 		</div>
+		<div id="contenedor-mensaje"></div>
 		</center>
 	</div>	
     

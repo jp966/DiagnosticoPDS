@@ -38,6 +38,7 @@ public class ValidaRunContacto extends HttpServlet {
 	}
 
 	/**
+	 * Verifica que un rut no esté registrado previamente  
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

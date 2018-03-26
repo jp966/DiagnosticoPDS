@@ -28,6 +28,7 @@ public class ListaContacto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
+     * dsadadads
      * @see HttpServlet#HttpServlet()
      */
     public ListaContacto() {
@@ -44,7 +45,9 @@ public class ListaContacto extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * Genera el código de la tabla de contactos
+	 * @param request
+	 * @param request
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
