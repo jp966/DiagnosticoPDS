@@ -24,7 +24,7 @@
 
 <nav class="navbar navbar-light bg-light justify-content-between">
   <a class="navbar-brand"><i class="fas fa-clipboard-list"></i> Gestión contactos</a>
-  <button onclick="location.href = 'index.jsp'"  class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar sesión</button>
+  <button id="botonCierraSesion"  class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar sesión</button>
     
 </nav>
 
