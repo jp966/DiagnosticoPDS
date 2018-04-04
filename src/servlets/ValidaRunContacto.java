@@ -38,7 +38,9 @@ public class ValidaRunContacto extends HttpServlet {
 	}
 
 	/**
-	 * Verifica que un rut no esté registrado previamente  
+	 * Verifica que el rut obtenido por medio de los parámetros de la petición, no esté siendo 
+	 * ocupado por algún contacto previamente registrado. La validación se realiza tanto para 
+	 * las operaciones de edición como de registro de un contacto. 
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

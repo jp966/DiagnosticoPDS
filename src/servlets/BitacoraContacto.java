@@ -41,7 +41,8 @@ public class BitacoraContacto extends HttpServlet {
 	}
 
 	/**
-	 * Genera el código de la lista de anotaciones y guarda nuevas.
+	 * Genera el código de la lista de anotaciones y permite guardar nuevas,
+	 * dependiento del tipo de operación especificada en los parámetros obtenidos de la petición.
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

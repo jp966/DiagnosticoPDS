@@ -37,7 +37,8 @@ public class DetalleContacto extends HttpServlet {
 	}
 
 	/**
-	 * Genera el código de la ficha de un contacto
+	 * Genera el código de la ficha de un contacto, con toda su información básica,
+	 *  obtenida a través de la id del mismo desde un parámetro de la petición.
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -51,7 +52,7 @@ public class DetalleContacto extends HttpServlet {
 			Contacto contacto = ContactoDAO.loadContactoByORMID(Integer.parseInt(idContacto));
 			System.out.println(contacto.getFechaNacimiento());
 			out.println("<div>");
-				out.println("<div class=\"card\" style=\"width:550px;border-style: none;display:block;\n" + 
+				out.println("<div class=\"card\" style=\"width:80%;border-style: none;display:block;\n" + 
 						"    margin:auto;\">");
 				out.println("<img class=\"card-img-top\" src='"+contacto.getFoto()+"' alt=\"Card image\" style=\"border-radius: 50%;display:block;\n" + 
 						"    margin:auto;width:50%;heigth:50%;\">");

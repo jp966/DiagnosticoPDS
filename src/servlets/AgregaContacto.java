@@ -42,7 +42,8 @@ public class AgregaContacto extends HttpServlet {
 	}
 
 	/**
-	 * Agrega un nuevo cliente
+	 * Agrega un nuevo contacto a partir de toda la información básica del mismo, obtenida
+	 * desde de los parámetros la petición.
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -43,7 +43,9 @@ public class EditaContacto extends HttpServlet {
 	}
 
 	/**
-	 * Genera el código del formulario de edición de un contacto y guarda los cambios
+	 * Genera el código del formulario de edición de un contacto y guarda los cambios realizados 
+	 * sobre el mismo, dependiendo del tipo de operación que se realice, obtenida desde los parámetros 
+	 * de la petición.
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

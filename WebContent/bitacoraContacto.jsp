@@ -35,7 +35,7 @@
 					    
 					   
 					  </div>
-					  <div class="modal-footer">
+					  <div>
 					  		 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 					        <button id="boton-anotacion" type="button" class="btn btn-primary">Añadir nueva anotación</button>
 					  </div>

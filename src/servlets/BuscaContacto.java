@@ -2,6 +2,9 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,7 +40,8 @@ public class BuscaContacto extends HttpServlet {
 	}
 
 	/**
-	 * Genera el código de la tabla de contactos de acuerdo a la búsqueda avanzada o simple
+	 * Genera el código de la tabla de contactos de acuerdo a la búsqueda avanzada o simple,
+	 * obtenida a través de los parámetros de la petición.
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -49,6 +53,15 @@ public class BuscaContacto extends HttpServlet {
 		String direccion = request.getParameter("direccion");
 		String telefono = request.getParameter("telefono");
 		String fechaNacimiento = request.getParameter("fechaNacimiento");
+		
+		try {
+			Date fecha = new SimpleDateFormat("MM/dd/yyyy").parse(fechaNacimiento);
+			fechaNacimiento = (fecha.getYear()+1900) +"-"+(fecha.getMonth()+1)+"-"+fecha.getDate();
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		String lugarResidencia = request.getParameter("lugarResidencia");
 		String organizacion = request.getParameter("organizacion");
 		String foto = request.getParameter("foto");

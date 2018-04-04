@@ -40,7 +40,8 @@ public class EliminaContacto extends HttpServlet {
 	}
 
 	/**
-	 * Elimina un contacto y anotaciones asociadas
+	 * Elimina un contacto a través de la id obtenida de un parámetro de la petición,
+	 * y todas las anotaciones asociadas al mismo.
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

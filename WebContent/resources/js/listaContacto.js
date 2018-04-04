@@ -31,6 +31,12 @@ if(JSON.parse(retrievedObject)){
 
 		});
 		
+		$( function() {
+		    $( "#fechaNacimientoContactoBuscar" ).datepicker();
+		    
+		  } );
+
+		
 		//Botón para cerrar sesión
 		$("#botonCierraSesion").on("click",function(){
 			localStorage.removeItem("estado");
@@ -138,7 +144,7 @@ if(JSON.parse(retrievedObject)){
 		//Botón bitácora contacto de modal
 		$("body").on("click","#boton-anotacion",function(){
 			//si el formulario de creacion de anotación es válido, entonces...
-			if($("#tituloAnotacion").val()!="" && $("#contenidoAnotacion").val()!="" ){
+			if($("#tituloAnotacion").val()!="" || $("#contenidoAnotacion").val()!="" ){
 				$.ajax({
 					type:"POST",
 					url:"BitacoraContacto",

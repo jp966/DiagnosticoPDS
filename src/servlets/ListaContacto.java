@@ -15,6 +15,7 @@ import org.orm.PersistentException;
 
 import sistema.Contacto;
 import sistema.ContactoDAO;
+import sistema.ContactoCriteria;
 import sistema.Usuario;
 import sistema.UsuarioDAO;
 
@@ -28,7 +29,6 @@ public class ListaContacto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
-     * dsadadads
      * @see HttpServlet#HttpServlet()
      */
     public ListaContacto() {
@@ -45,7 +45,7 @@ public class ListaContacto extends HttpServlet {
 	}
 
 	/**
-	 * Genera el código de la tabla de contactos
+	 * Genera el código de la tabla de contactos.
 	 * @param request
 	 * @param request
 	 */
